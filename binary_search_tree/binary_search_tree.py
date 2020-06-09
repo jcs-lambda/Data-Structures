@@ -9,6 +9,10 @@ This part of the project comprises two days:
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods
    on the BSTNode class.
 """
+
+from queue import LifoQueue, Queue
+
+
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -66,17 +70,37 @@ class BSTNode:
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
-        pass
+        if node.left is not None:
+            self.in_order_print(node.left)
+        print(node.value)
+        if node.right is not None:
+            self.in_order_print(node.right)
     
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
-        pass
+        queue = Queue()
+        queue.put(node)
+        while not queue.empty():
+            current_node = queue.get()
+            print(current_node.value)
+            if current_node.left is not None:
+                queue.put(current_node.left)
+            if current_node.right is not None:
+                queue.put(current_node.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        stack = LifoQueue()
+        stack.put(node)
+        while not stack.empty():
+            current_node = stack.get()
+            print(current_node.value)
+            if current_node.left is not None:
+                stack.put(current_node.left)
+            if current_node.right is not None:
+                stack.put(current_node.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
@@ -88,3 +112,14 @@ class BSTNode:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
+
+bst = BSTNode(1)
+bst.insert(8)
+bst.insert(5)
+bst.insert(7)
+bst.insert(6)
+bst.insert(3)
+bst.insert(4)
+bst.insert(2)
+
+# bst.bft_print(bst)
