@@ -31,7 +31,7 @@ class BSTNode:
                 self.right.insert(value)
             else:
                 self.right = BSTNode(value)
-        else:
+        elif value == self.value:
             old_right = self.right
             self.right = BSTNode(value)
             self.right.right = old_right
@@ -113,13 +113,3 @@ class BSTNode:
     def post_order_dft(self, node):
         pass
 
-bst = BSTNode(1)
-bst.insert(8)
-bst.insert(5)
-bst.insert(7)
-bst.insert(6)
-bst.insert(3)
-bst.insert(4)
-bst.insert(2)
-
-# bst.bft_print(bst)
