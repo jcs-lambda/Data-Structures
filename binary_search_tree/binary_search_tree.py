@@ -107,15 +107,11 @@ class BSTNode:
 
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
-        stack = LifoQueue()
-        stack.put(node)
-        while not stack.empty():
-            current_node = stack.get()
-            print(current_node.value)
-            if current_node.right is not None:
-                stack.put(current_node.right)
-            if current_node.left is not None:
-                stack.put(current_node.left)
+        print(node.value)
+        if node.left is not None:
+            self.pre_order_dft(node.left)
+        if node.right is not None:
+            self.pre_order_dft(node.right)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
