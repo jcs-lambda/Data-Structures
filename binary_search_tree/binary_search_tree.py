@@ -26,15 +26,11 @@ class BSTNode:
                 self.left.insert(value)
             else:
                 self.left = BSTNode(value)
-        elif value > self.value:
+        elif value >= self.value:
             if self.right is not None:
                 self.right.insert(value)
             else:
                 self.right = BSTNode(value)
-        elif value == self.value:
-            old_right = self.right
-            self.right = BSTNode(value)
-            self.right.right = old_right
 
     # Return True if the tree contains the value
     # False if it does not
