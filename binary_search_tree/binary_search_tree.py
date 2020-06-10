@@ -71,10 +71,10 @@ class BSTNode:
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
         if node.left is not None:
-            self.in_order_print(node.left)
+            node.in_order_print(node.left)
         print(node.value)
         if node.right is not None:
-            self.in_order_print(node.right)
+            node.in_order_print(node.right)
     
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
@@ -109,15 +109,14 @@ class BSTNode:
     def pre_order_dft(self, node):
         print(node.value)
         if node.left is not None:
-            self.pre_order_dft(node.left)
+            node.pre_order_dft(node.left)
         if node.right is not None:
-            self.pre_order_dft(node.right)
+            node.pre_order_dft(node.right)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         if node.left is not None:
-            self.post_order_dft(node.left)
+            node.post_order_dft(node.left)
         if node.right is not None:
-            self.post_order_dft(node.right)
+            node.post_order_dft(node.right)
         print(node.value)
-
