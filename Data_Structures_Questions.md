@@ -22,7 +22,7 @@ Answer the following questions for each of the data structures you implemented a
 2. What is the runtime complexity of `enqueue` using a linked list?
     -   O(1)
 3. What is the runtime complexity of `dequeue` using a list?
-    -   O(1)
+    -   O(n)
 4. What is the runtime complexity of `dequeue` using a linked list?
     -   O(1)
 5. What is the runtime complexity of `len` using a list?
@@ -58,11 +58,11 @@ Answer the following questions for each of the data structures you implemented a
 ## Binary Search Tree
 
 1. What is the runtime complexity of `insert`? 
-    -   O(n)
+    -   O(log n)
 2. What is the runtime complexity of `contains`?
-    -   O(n)
+    -   O(log n)
 3. What is the runtime complexity of `get_max`? 
-    -   O(n)
+    -   O(log n)
 4. What is the runtime complexity of `for_each`?
     -   O(n)
 
