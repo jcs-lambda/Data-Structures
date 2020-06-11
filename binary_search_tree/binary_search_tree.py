@@ -93,10 +93,10 @@ class BSTNode:
         while not stack.empty():
             current_node = stack.get()
             print(current_node.value)
-            if current_node.left is not None:
-                stack.put(current_node.left)
             if current_node.right is not None:
                 stack.put(current_node.right)
+            if current_node.left is not None:
+                stack.put(current_node.left)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
